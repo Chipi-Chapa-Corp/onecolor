@@ -1,9 +1,9 @@
-import { StyleSheet, View } from "react-native";
 import { Button } from "@react-navigation/elements";
-import { useTheme } from "@/hooks/useTheme";
-import { Label } from "@/components/Label";
-import { HueWheel } from "@/components/HueWheel";
+import { StyleSheet, View } from "react-native";
 import { Box } from "@/components/Box";
+import { HueWheel } from "@/components/HueWheel";
+import { Label } from "@/components/Label";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function HomeScreen() {
   const theme = useTheme();
