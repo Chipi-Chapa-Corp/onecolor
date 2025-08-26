@@ -1,11 +1,35 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { Button } from "@react-navigation/elements";
+import { useTheme } from "@/hooks/useTheme";
+import { Label } from "@/components/Label";
+import { HueWheel } from "@/components/HueWheel";
 import { Box } from "@/components/Box";
-import { ThemedText } from "@/components/Label";
 
 export default function HomeScreen() {
+  const theme = useTheme();
   return (
-    <Box style={styles.titleContainer}>
-      <ThemedText type="title">Welcome!</ThemedText>
+    <Box
+      style={[
+        styles.titleContainer,
+        {
+          padding: theme.padding.xl,
+          gap: theme.gaps.xl,
+        },
+      ]}
+    >
+      <Label type="title">Welcome!</Label>
+      <HueWheel />
+      <View
+        style={[
+          styles.buttonsContainer,
+          {
+            gap: theme.gaps.s,
+          },
+        ]}
+      >
+        <Button style={styles.button}>Start new trip</Button>
+        <Button style={styles.button}>Open gallery</Button>
+      </View>
     </Box>
   );
 }
@@ -13,9 +37,17 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: "column",
-    padding: 64,
     height: "100%",
     alignItems: "center",
-    gap: 8,
+    justifyContent: "center",
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    flex: 1 / 2,
   },
 });

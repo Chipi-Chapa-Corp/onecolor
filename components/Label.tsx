@@ -1,19 +1,19 @@
 import { StyleSheet, Text, type TextProps } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
 
-export type ThemedTextProps = TextProps & {
+export type LabelProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
 };
 
-export function ThemedText({
+export function Label({
   style,
   lightColor,
   darkColor,
   type = "default",
   ...rest
-}: ThemedTextProps) {
+}: LabelProps) {
   const theme = useTheme();
 
   return (
