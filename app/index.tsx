@@ -1,6 +1,6 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { Box } from "@/components/Box";
 import { ButtonWithContent } from "@/components/ButtonWithContent";
 import { Label } from "@/components/Label";
 import { useTheme } from "@/hooks/useTheme";
@@ -12,7 +12,10 @@ export default function HomeScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
-      <Box
+      <LinearGradient
+        colors={[theme.colors.outerLight, theme.colors.outerDark]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
         style={[
           styles.container,
           {
@@ -23,25 +26,15 @@ export default function HomeScreen() {
       >
         <Label type="title">Welcome!</Label>
         <HueWheel
-          sections={[
-            "pink",
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "cyan",
-            "blue",
-            "purple",
-          ]}
-          sectionColors={{
-            pink: "#FF647E",
-            red: "#ff0000",
-            orange: "#ff7f00",
-            yellow: "#ffff00",
-            green: "#00ff00",
-            cyan: "#00BFFF",
-            blue: "#0000ff",
-            purple: "#7f00ff",
+          sections={{
+            pink: "#F458CD",
+            red: "#FC5A5A",
+            orange: "#FBA34B",
+            yellow: "#FEFE56",
+            green: "#58FC58",
+            cyan: "#56D1FA",
+            blue: "#5555FC",
+            purple: "#A246FF",
           }}
           onSectionClick={(section: string) => {
             alert(`Section clicked: ${section}`);
@@ -51,7 +44,7 @@ export default function HomeScreen() {
           style={[
             styles.buttonsContainer,
             {
-              gap: theme.gaps.m,
+              gap: theme.gaps.s,
             },
           ]}
         >
@@ -71,7 +64,7 @@ export default function HomeScreen() {
             <Label>Open gallery</Label>
           </ButtonWithContent>
         </View>
-      </Box>
+      </LinearGradient>
       <NewTripScreen visible={modalVisible} setVisible={setModalVisible} />
     </>
   );
