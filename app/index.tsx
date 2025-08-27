@@ -1,9 +1,9 @@
 import { Button } from "@react-navigation/elements";
 import { StyleSheet, View } from "react-native";
 import { Box } from "@/components/Box";
-import { HueWheel } from "@/components/HueWheel";
 import { Label } from "@/components/Label";
 import { useTheme } from "@/hooks/useTheme";
+import { HueWheel } from "../components/HueWheel";
 
 export default function HomeScreen() {
   const theme = useTheme();
@@ -18,7 +18,31 @@ export default function HomeScreen() {
       ]}
     >
       <Label type="title">Welcome!</Label>
-      <HueWheel />
+      <HueWheel
+        sections={[
+          "pink",
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "cyan",
+          "blue",
+          "purple",
+        ]}
+        sectionColors={{
+          pink: "#FF647E",
+          red: "#ff0000",
+          orange: "#ff7f00",
+          yellow: "#ffff00",
+          green: "#00ff00",
+          cyan: "#00BFFF",
+          blue: "#0000ff",
+          purple: "#7f00ff",
+        }}
+        onSectionClick={(section: string) => {
+          alert(`Section clicked: ${section}`);
+        }}
+      />
       <View
         style={[
           styles.buttonsContainer,
