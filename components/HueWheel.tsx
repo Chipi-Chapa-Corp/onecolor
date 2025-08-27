@@ -265,7 +265,7 @@ export function HueWheel({
 
 const styles = StyleSheet.create({
   container: {
-    height: "45%",
+    height: "35%",
     aspectRatio: 1 / 1,
     alignItems: "center",
     justifyContent: "center",
