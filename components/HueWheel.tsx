@@ -35,7 +35,7 @@ export function HueWheel({
   sections,
   onSectionClick,
   style,
-  innerRadiusRatio = 0.7,
+  innerRadiusRatio = 0.65,
 }: HueWheelProps) {
   const theme = useTheme();
 
@@ -50,7 +50,7 @@ export function HueWheel({
     const canvasSize = size || 1;
     const centerX = canvasSize / 2;
     const centerY = canvasSize / 2;
-    const outerRadius = canvasSize / 2.5;
+    const outerRadius = canvasSize / 2.3;
     const innerRadius = Math.max(
       0,
       Math.min(outerRadius - 1, outerRadius * innerRadiusRatio),
@@ -333,7 +333,7 @@ export function HueWheel({
             <Circle
               cx={dims.centerX}
               cy={dims.centerY}
-              r={60}
+              r={50}
               color={theme.colors.background}
             >
               <Shadow
@@ -348,7 +348,7 @@ export function HueWheel({
             <Circle
               cx={dims.centerX}
               cy={dims.centerY}
-              r={60}
+              r={50}
               color={theme.colors.background}
             >
               <Shadow
@@ -363,7 +363,7 @@ export function HueWheel({
             <Circle
               cx={dims.centerX}
               cy={dims.centerY}
-              r={60}
+              r={50}
               color={theme.colors.background}
             >
               <Shadow
@@ -383,7 +383,7 @@ export function HueWheel({
             <Circle
               cx={dims.centerX}
               cy={dims.centerY}
-              r={60}
+              r={50}
               color={theme.colors.background}
             >
               <LinearGradient
@@ -401,7 +401,7 @@ export function HueWheel({
 
 const styles = StyleSheet.create({
   container: {
-    height: "35%",
+    width: "100%",
     aspectRatio: 1 / 1,
     alignItems: "center",
     justifyContent: "center",
