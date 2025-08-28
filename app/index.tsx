@@ -4,7 +4,7 @@ import { StyleSheet, View } from "react-native";
 import { ButtonWithContent } from "@/components/ButtonWithContent";
 import { Label } from "@/components/Label";
 import { useTheme } from "@/hooks/useTheme";
-import { HueWheel } from "../components/HueWheel";
+import { HueWheel } from "../components/HueWheel/HueWheel";
 import NewTripScreen from "./new-trip-modal";
 
 export default function HomeScreen() {
