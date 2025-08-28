@@ -7,6 +7,7 @@ export const Colors = {
     tabIconDefault: "#687076",
     tabIconSelected: "#0a7ea4",
     skeuo: {
+      // FIXME: light theme
       outerLight: "#3D3E48",
       outerDark: "#191A1E",
 
