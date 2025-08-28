@@ -22,7 +22,7 @@ export type HueWheelProps = {
   outerBlur?: number;
 };
 
-export function HueWheel({
+export const HueWheel: React.FC<HueWheelProps> = ({
   sections,
   onSectionClick,
   style,
@@ -30,7 +30,7 @@ export function HueWheel({
   shadowOffset = 10,
   innerBlur = 3,
   outerBlur = 20,
-}: HueWheelProps) {
+}) => {
   const theme = useTheme();
   const { width: windowWidth } = useWindowDimensions();
   const sectionIds = useMemo(() => Object.keys(sections), [sections]);
@@ -133,7 +133,7 @@ export function HueWheel({
               dx={10}
               dy={10}
               blur={15}
-              color={theme.colors.outerDark}
+              color={theme.colors.skeuo.outerDark}
               shadowOnly
             />
           </Path>
@@ -188,7 +188,7 @@ export function HueWheel({
       </Canvas>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

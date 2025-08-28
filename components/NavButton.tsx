@@ -8,7 +8,7 @@ type NavButtonProps = {
   text: string;
 };
 
-export function NavButton({ link, text }: NavButtonProps) {
+export const NavButton: React.FC<NavButtonProps> = ({ link, text }) => {
   const theme = useTheme();
 
   return (
@@ -27,4 +27,4 @@ export function NavButton({ link, text }: NavButtonProps) {
       </ButtonWithContent>
     </Link>
   );
-}
+};

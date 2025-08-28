@@ -1,10 +1,10 @@
 import { StyleSheet, View } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
 
-export function Divider() {
+export const Divider: React.FC = () => {
   const theme = useTheme();
   return <View style={[styles.line, { backgroundColor: theme.colors.tint }]} />;
-}
+};
 
 const styles = StyleSheet.create({
   line: {

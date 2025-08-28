@@ -7,13 +7,13 @@ export type LabelProps = TextProps & {
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
 };
 
-export function Label({
+export const Label: React.FC<LabelProps> = ({
   style,
   lightColor,
   darkColor,
   type = "default",
   ...rest
-}: LabelProps) {
+}) => {
   const theme = useTheme();
 
   return (
@@ -30,7 +30,7 @@ export function Label({
       {...rest}
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   default: {

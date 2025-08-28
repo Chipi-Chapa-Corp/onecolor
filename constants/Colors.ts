@@ -6,27 +6,16 @@ export const Colors = {
     icon: "#687076",
     tabIconDefault: "#687076",
     tabIconSelected: "#0a7ea4",
-    circle: "#000",
-    shadowLightInner: "#000",
-    shadowLightOuter: "#000",
-    shadowDarkInner: "#000",
-    shadowDarkOuter: "#000",
+    skeuo: {
+      outerLight: "#3D3E48",
+      outerDark: "#191A1E",
 
-    innerGradientFrom: "#FFFFFF",
-    innerGradientTo: "#F2F2F6",
-    red: "red",
-    blue: "blue",
-    green: "green",
-    orange: "orange",
-    cyan: "cyan",
-    lightGreen: "lightgreen",
+      innerBlurLight: "#2B2C33",
+      innerBlurDark: "#1E2024",
 
-    outerLight: "#4F4F55",
-    outerDark: "#282831",
-    innerLight: "#28282F1F",
-    innerDark: "#15151A",
-    innerBlurLight: "#33343D",
-    innerBlurDark: "#191A1E",
+      innerLight: "#2B2C33",
+      innerDark: "#1E2024",
+    },
   },
   dark: {
     text: "#ECEDEE",
@@ -35,29 +24,15 @@ export const Colors = {
     icon: "#9BA1A6",
     tabIconDefault: "#9BA1A6",
     tabIconSelected: "#fff",
+    skeuo: {
+      outerLight: "#3D3E48",
+      outerDark: "#191A1E",
 
-    circle: "#212126",
+      innerBlurLight: "#2B2C33",
+      innerBlurDark: "#1E2024",
 
-    shadowLightInner: "#28282F1F",
-    shadowDarkInner: "#15151A",
-
-    shadowLightOuter: "#4F4F55",
-    shadowDarkOuter: "#282831",
-
-    red: "red",
-    blue: "blue",
-    green: "green",
-    orange: "orange",
-    cyan: "cyan",
-    lightGreen: "lightgreen",
-
-    outerLight: "#3D3E48",
-    outerDark: "#191A1E",
-
-    innerBlurLight: "#2B2C33",
-    innerBlurDark: "#1E2024",
-
-    innerLight: "#2B2C33",
-    innerDark: "#1E2024",
+      innerLight: "#2B2C33",
+      innerDark: "#1E2024",
+    },
   },
 };

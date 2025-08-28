@@ -7,11 +7,11 @@ type ButtonProps = {
   onPress?: () => void;
 };
 
-export function ButtonWithContent({
+export const ButtonWithContent: React.FC<PropsWithChildren<ButtonProps>> = ({
   style,
   onPress,
   children,
-}: PropsWithChildren<ButtonProps>) {
+}) => {
   const theme = useTheme();
 
   return (
@@ -31,4 +31,4 @@ export function ButtonWithContent({
       {children}
     </TouchableOpacity>
   );
-}
+};

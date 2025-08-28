@@ -1,7 +1,7 @@
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
-import { Label } from "./Label";
 import { ButtonWithContent } from "./ButtonWithContent";
+import { Label } from "./Label";
 
 export type RadioProps = {
   options: string[];
@@ -9,15 +9,17 @@ export type RadioProps = {
   onChange: (value: string) => void;
 };
 
-function OptionButton({
-  value,
-  selected,
-  onPress,
-}: {
+type OptionButtonProps = {
   value: string;
   selected: boolean;
   onPress: () => void;
-}) {
+};
+
+const OptionButton: React.FC<OptionButtonProps> = ({
+  value,
+  selected,
+  onPress,
+}) => {
   const theme = useTheme();
   return (
     <ButtonWithContent
@@ -35,9 +37,9 @@ function OptionButton({
       </Label>
     </ButtonWithContent>
   );
-}
+};
 
-export function Radio({ options, value, onChange }: RadioProps) {
+export const Radio: React.FC<RadioProps> = ({ options, value, onChange }) => {
   const theme = useTheme();
   return (
     <View
@@ -57,4 +59,4 @@ export function Radio({ options, value, onChange }: RadioProps) {
       ))}
     </View>
   );
-}
+};

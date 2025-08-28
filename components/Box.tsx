@@ -7,12 +7,12 @@ export type ThemedViewProps = ViewProps & {
   darkColor?: string;
 };
 
-export function Box({
+export const Box: React.FC<ThemedViewProps> = ({
   style,
   lightColor,
   darkColor,
   ...otherProps
-}: ThemedViewProps) {
+}) => {
   const theme = useTheme();
 
   return (
@@ -21,4 +21,4 @@ export function Box({
       {...otherProps}
     />
   );
-}
+};

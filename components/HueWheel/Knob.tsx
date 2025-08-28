@@ -48,7 +48,7 @@ export const Knob: React.FC<KnobProps> = ({
           dx={-20}
           dy={-20}
           blur={outerBlur}
-          color={theme.colors.outerLight}
+          color={theme.colors.skeuo.outerLight}
           shadowOnly
         />
       </Circle>
@@ -58,7 +58,7 @@ export const Knob: React.FC<KnobProps> = ({
           dx={20}
           dy={20}
           blur={outerBlur}
-          color={theme.colors.outerDark}
+          color={theme.colors.skeuo.outerDark}
           shadowOnly
         />
       </Circle>
@@ -68,13 +68,13 @@ export const Knob: React.FC<KnobProps> = ({
           dx={-3}
           dy={-3}
           blur={innerBlur}
-          color={theme.colors.innerBlurDark}
+          color={theme.colors.skeuo.innerBlurDark}
         />
         <Shadow
           dx={3}
           dy={3}
           blur={innerBlur}
-          color={theme.colors.innerBlurLight}
+          color={theme.colors.skeuo.innerBlurLight}
         />
       </Circle>
       {/* Inner Circle */}
@@ -82,7 +82,7 @@ export const Knob: React.FC<KnobProps> = ({
         <LinearGradient
           start={start}
           end={end}
-          colors={[theme.colors.innerDark, theme.colors.innerLight]}
+          colors={[theme.colors.skeuo.innerDark, theme.colors.skeuo.innerLight]}
         />
       </Circle>
     </Group>

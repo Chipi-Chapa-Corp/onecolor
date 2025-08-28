@@ -13,7 +13,7 @@ export default function HomeScreen() {
   return (
     <>
       <LinearGradient
-        colors={[theme.colors.outerLight, theme.colors.outerDark]}
+        colors={[theme.colors.skeuo.outerLight, theme.colors.skeuo.outerDark]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={[
