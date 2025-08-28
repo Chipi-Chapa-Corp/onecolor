@@ -4,9 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "expo start --android",
-    "build": "eas build --platform android --profile production",
-    "build:preview": "eas build --platform android --profile preview",
-    "build:dev": "eas build --local --platform android --profile development",
+    "build": "eas build --local --output dist/production.apk --platform android --profile production",
+    "build:preview": "eas build --local --output dist/preview.apk --platform android --profile preview",
     "format": "biome format --write; biome lint --write"
   },
   "dependencies": {
@@ -23,7 +22,9 @@
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
-    "expo-dev-client": "~5.2.4"
+    "expo-dev-client": "~5.2.4",
+    "expo-system-ui": "~5.0.11",
+    "expo-constants": "~17.1.7"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -31,5 +32,6 @@
     "@types/react": "~19.0.10",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
