@@ -16,6 +16,8 @@ export const Colors = {
 
       innerLight: "#2B2C33",
       innerDark: "#1E2024",
+
+      innerContent: "#2F3038",
     },
   },
   dark: {
@@ -34,6 +36,8 @@ export const Colors = {
 
       innerLight: "#2B2C33",
       innerDark: "#1E2024",
+
+      innerContent: "#30313B",
     },
   },
 };

@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
-import { ButtonWithContent } from "./ButtonWithContent";
+import { Button } from "./Button";
 import { Label } from "./Label";
 
 export type RadioProps = {
@@ -22,7 +22,7 @@ const OptionButton: React.FC<OptionButtonProps> = ({
 }) => {
   const theme = useTheme();
   return (
-    <ButtonWithContent
+    <Button
       style={{
         backgroundColor: selected ? theme.colors.tint : theme.colors.background,
       }}
@@ -35,7 +35,7 @@ const OptionButton: React.FC<OptionButtonProps> = ({
       >
         {value}
       </Label>
-    </ButtonWithContent>
+    </Button>
   );
 };
 

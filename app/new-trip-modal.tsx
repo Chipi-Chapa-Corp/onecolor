@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal, StyleSheet, View } from "react-native";
 import { Box } from "@/components/Box";
-import { ButtonWithContent } from "@/components/ButtonWithContent";
+import { Button } from "@/components/Button";
 import { Divider } from "@/components/Divider";
 import { Label } from "@/components/Label";
 import { Radio } from "@/components/Radio";
@@ -52,22 +52,20 @@ export default function NewTripScreen({ visible, setVisible }: ModalProps) {
             },
           ]}
         >
-          <ButtonWithContent
+          <Button
             style={{
               flex: 1 / 2,
             }}
+            label="Cancel"
             onPress={() => setVisible(false)}
-          >
-            <Label>Cancel</Label>
-          </ButtonWithContent>
-          <ButtonWithContent
+          />
+          <Button
             style={{
               flex: 1 / 2,
             }}
+            label="Start trip"
             onPress={() => setVisible(false)}
-          >
-            <Label>Start trip</Label>
-          </ButtonWithContent>
+          />
         </View>
       </Box>
     </Modal>

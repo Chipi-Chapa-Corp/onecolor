@@ -1,7 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { ButtonWithContent } from "@/components/ButtonWithContent";
+import { Button } from "@/components/Button";
 import { Label } from "@/components/Label";
 import { useTheme } from "@/hooks/useTheme";
 import { HueWheel } from "../components/HueWheel/HueWheel";
@@ -44,25 +44,24 @@ export default function HomeScreen() {
           style={[
             styles.buttonsContainer,
             {
-              gap: theme.gaps.s,
+              gap: theme.gaps.l,
             },
           ]}
         >
-          <ButtonWithContent
+          <Button
             style={{
               flex: 1 / 2,
             }}
+            label="Start new trip"
             onPress={() => setModalVisible(true)}
-          >
-            <Label>Start new trip</Label>
-          </ButtonWithContent>
-          <ButtonWithContent
+          />
+          <Button
             style={{
               flex: 1 / 2,
             }}
-          >
-            <Label>Open gallery</Label>
-          </ButtonWithContent>
+            label="Open gallery"
+            onPress={() => setModalVisible(true)}
+          />
         </View>
       </LinearGradient>
       <NewTripScreen visible={modalVisible} setVisible={setModalVisible} />
