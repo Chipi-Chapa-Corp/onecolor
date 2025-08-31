@@ -2,12 +2,16 @@ import {
   Circle,
   Group,
   LinearGradient,
+  Path,
   Shadow,
+  Skia,
   vec,
 } from "@shopify/react-native-skia";
 import type React from "react";
 import { useMemo } from "react";
 import { useTheme } from "@/hooks/useTheme";
+
+export const KNOB_RADIUS = 50;
 
 type KnobProps = {
   centerX: number;
@@ -16,6 +20,7 @@ type KnobProps = {
   innerBlur: number;
   radius: number;
   offset: number;
+  withPlus: boolean;
 };
 
 export const Knob: React.FC<KnobProps> = ({
@@ -25,6 +30,7 @@ export const Knob: React.FC<KnobProps> = ({
   innerBlur,
   radius,
   offset,
+  withPlus,
 }) => {
   const theme = useTheme();
 
@@ -40,10 +46,23 @@ export const Knob: React.FC<KnobProps> = ({
     };
   }, [centerX, centerY, radius, offset]);
 
+  const crossSize = 15;
+
+  const path = Skia.Path.Make();
+  path.moveTo(centerX - crossSize, centerY);
+  path.lineTo(centerX + crossSize, centerY);
+  path.moveTo(centerX, centerY - crossSize);
+  path.lineTo(centerX, centerY + crossSize);
+
   return (
     <Group>
       {/* Outer Light Shadow */}
-      <Circle cx={centerX} cy={centerY} r={50} color={theme.colors.background}>
+      <Circle
+        cx={centerX}
+        cy={centerY}
+        r={KNOB_RADIUS}
+        color={theme.colors.background}
+      >
         <Shadow
           dx={-20}
           dy={-20}
@@ -53,7 +72,12 @@ export const Knob: React.FC<KnobProps> = ({
         />
       </Circle>
       {/* Outer Dark Shadow */}
-      <Circle cx={centerX} cy={centerY} r={50} color={theme.colors.background}>
+      <Circle
+        cx={centerX}
+        cy={centerY}
+        r={KNOB_RADIUS}
+        color={theme.colors.background}
+      >
         <Shadow
           dx={20}
           dy={20}
@@ -63,7 +87,12 @@ export const Knob: React.FC<KnobProps> = ({
         />
       </Circle>
       {/* Inner Circle Blur */}
-      <Circle cx={centerX} cy={centerY} r={50} color={theme.colors.background}>
+      <Circle
+        cx={centerX}
+        cy={centerY}
+        r={KNOB_RADIUS}
+        color={theme.colors.background}
+      >
         <Shadow
           dx={-3}
           dy={-3}
@@ -78,13 +107,37 @@ export const Knob: React.FC<KnobProps> = ({
         />
       </Circle>
       {/* Inner Circle */}
-      <Circle cx={centerX} cy={centerY} r={50} color={theme.colors.background}>
+      <Circle
+        cx={centerX}
+        cy={centerY}
+        r={KNOB_RADIUS}
+        color={theme.colors.background}
+      >
         <LinearGradient
           start={start}
           end={end}
           colors={[theme.colors.skeuo.innerDark, theme.colors.skeuo.innerLight]}
         />
       </Circle>
+
+      {withPlus && (
+        <Path
+          path={path}
+          style="stroke"
+          color={theme.colors.skeuo.innerContent}
+          strokeWidth={10}
+          strokeCap="round"
+          strokeJoin="round"
+        >
+          <Shadow dx={5} dy={5} blur={5} color={theme.colors.skeuo.innerDark} />
+          <Shadow
+            dx={-5}
+            dy={-5}
+            blur={5}
+            color={theme.colors.skeuo.innerLight}
+          />
+        </Path>
+      )}
     </Group>
   );
 };

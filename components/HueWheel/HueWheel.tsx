@@ -9,7 +9,7 @@ import {
   type ViewStyle,
 } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
-import { Knob } from "./Knob";
+import { KNOB_RADIUS, Knob } from "./Knob";
 import { Segment, type SegmentData } from "./Segment";
 
 export type HueWheelProps = {
@@ -20,6 +20,8 @@ export type HueWheelProps = {
   shadowOffset?: number;
   innerBlur?: number;
   outerBlur?: number;
+  withPlus?: boolean;
+  onKnobPress?: () => void;
 };
 
 export const HueWheel: React.FC<HueWheelProps> = ({
@@ -30,6 +32,8 @@ export const HueWheel: React.FC<HueWheelProps> = ({
   shadowOffset = 10,
   innerBlur = 3,
   outerBlur = 20,
+  withPlus = false,
+  onKnobPress,
 }) => {
   const theme = useTheme();
   const { width: windowWidth } = useWindowDimensions();
@@ -103,6 +107,10 @@ export const HueWheel: React.FC<HueWheelProps> = ({
     const changeX = locationX - dimensions.centerX;
     const changeY = locationY - dimensions.centerY;
     const distance = Math.hypot(changeX, changeY);
+    if (distance <= KNOB_RADIUS && withPlus) {
+      if (onKnobPress) onKnobPress();
+      return;
+    }
     if (distance < dimensions.innerRadius || distance > dimensions.outerRadius)
       return;
     const angleRad = Math.atan2(changeY, changeX);
@@ -120,7 +128,7 @@ export const HueWheel: React.FC<HueWheelProps> = ({
       onStartShouldSetResponder={() => true}
       onResponderRelease={handleRelease}
     >
-      <Canvas style={{ width: "100%", height: "100%" }}>
+      <Canvas style={{ width: "100%", height: "110%" }}>
         <Group>
           <Path
             path={ringShadowPath}
@@ -184,6 +192,7 @@ export const HueWheel: React.FC<HueWheelProps> = ({
           innerBlur={innerBlur}
           radius={dimensions.ringRadius}
           offset={shadowOffset}
+          withPlus={withPlus}
         />
       </Canvas>
     </View>
