@@ -23,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({ style, label, onPress }) => {
           backgroundColor: theme.colors.skeuo.innerContent,
           boxShadow: `
           20px 15px 40px 0 ${theme.colors.skeuo.outerDark},
+          10px 10px 40px 0 ${theme.colors.skeuo.innerDark} inset,
             -10px -5px 20px 0 ${theme.colors.skeuo.innerContent}
           `,
         },
