@@ -2,14 +2,15 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Button } from "@/components/Button";
+import { HueWheel } from "@/components/HueWheel/HueWheel";
 import { Label } from "@/components/Label";
 import { useTheme } from "@/hooks/useTheme";
-import { HueWheel } from "../components/HueWheel/HueWheel";
-import NewTripScreen from "./new-trip-modal";
+import { NewTripScreen } from "./modal/new-trip";
 
-export default function HomeScreen() {
+export const HomeScreen = () => {
   const theme = useTheme();
   const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <>
       <LinearGradient
@@ -40,14 +41,7 @@ export default function HomeScreen() {
             alert(`Section clicked: ${section}`);
           }}
         />
-        <View
-          style={[
-            styles.buttonsContainer,
-            {
-              gap: theme.gaps.l,
-            },
-          ]}
-        >
+        <View style={[styles.buttonsContainer, { gap: theme.gaps.l }]}>
           <Button
             style={{
               flex: 1 / 2,
@@ -67,7 +61,7 @@ export default function HomeScreen() {
       <NewTripScreen visible={modalVisible} setVisible={setModalVisible} />
     </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

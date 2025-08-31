@@ -1,7 +1,6 @@
 import { View } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
 import { Button } from "./Button";
-import { Label } from "./Label";
 
 export type RadioProps = {
   options: string[];
@@ -26,16 +25,12 @@ const OptionButton: React.FC<OptionButtonProps> = ({
       style={{
         backgroundColor: selected ? theme.colors.tint : theme.colors.background,
       }}
+      labelStyle={{
+        color: selected ? theme.colors.background : theme.colors.tint,
+      }}
+      label={value}
       onPress={onPress}
-    >
-      <Label
-        style={{
-          color: selected ? theme.colors.background : theme.colors.tint,
-        }}
-      >
-        {value}
-      </Label>
-    </Button>
+    />
   );
 };
 

@@ -1,14 +1,20 @@
-import { Pressable, type ViewStyle } from "react-native";
+import { Pressable, type TextStyle, type ViewStyle } from "react-native";
 import { useTheme } from "@/hooks/useTheme";
 import { Label } from "./Label";
 
 type ButtonProps = {
   style?: ViewStyle;
+  labelStyle?: TextStyle;
   label?: string;
   onPress?: () => void;
 };
 
-export const Button: React.FC<ButtonProps> = ({ style, label, onPress }) => {
+export const Button: React.FC<ButtonProps> = ({
+  style,
+  labelStyle,
+  label,
+  onPress,
+}) => {
   const theme = useTheme();
 
   return (
@@ -30,7 +36,7 @@ export const Button: React.FC<ButtonProps> = ({ style, label, onPress }) => {
         style,
       ]}
     >
-      <Label>{label}</Label>
+      <Label style={labelStyle}>{label}</Label>
     </Pressable>
   );
 };

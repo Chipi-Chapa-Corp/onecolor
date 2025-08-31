@@ -2,6 +2,7 @@
   "expo": {
     "name": "Lumina",
     "slug": "lumina",
+    "entryPoint": "./src/index.js",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,13 +20,7 @@
       "edgeToEdgeEnabled": true,
       "package": "com.chipichapacorp.lumina"
     },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
     "plugins": [
-      "expo-router",
       [
         "expo-splash-screen",
         {

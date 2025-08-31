@@ -12,7 +12,7 @@ type ModalProps = {
   setVisible(visible: boolean): void;
 };
 
-export default function NewTripScreen({ visible, setVisible }: ModalProps) {
+export const NewTripScreen = ({ visible, setVisible }: ModalProps) => {
   const theme = useTheme();
   const [tripType, setTripType] = useState("single");
 
@@ -70,7 +70,7 @@ export default function NewTripScreen({ visible, setVisible }: ModalProps) {
       </Box>
     </Modal>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
